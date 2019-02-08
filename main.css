@@ -1,0 +1,12 @@
+body{
+	background-image: url("images/background.jpg");
+	background-size: 100%;
+}
+
+#menu{
+	background-color: white;
+	height: 768px;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
