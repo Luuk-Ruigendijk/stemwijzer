@@ -18,4 +18,7 @@ function start(){
 	document.getElementById("disagreeButton").innerHTML = "Oneens";
 	document.getElementById("disagreeButton").style.display="inline";
 	document.getElementById("startButton").style.display="none";
+	document.getElementById("h1").innerHTML = subjects[0].title;
+	document.getElementById("p1").innerHTML = subjects[0].statement;
+	
 }
