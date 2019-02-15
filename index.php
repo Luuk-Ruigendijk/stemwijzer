@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+	<button style="display: none" id="backArrow" onclick="previousQuestion()">&larr;</button>
 	<div id="menu">
+
 		<h1 id="h1">Test uw politieke voorkeur aan de hand van 30 stellingen</h1>
 		<p id="p1"></p>
 		<button style="display: none;" id="agreeButton" onclick="agree()"></button>
