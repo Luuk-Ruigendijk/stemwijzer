@@ -10,9 +10,9 @@
 
 		<h1 id="h1">Test uw politieke voorkeur aan de hand van 30 stellingen</h1>
 		<p id="p1"></p>
-		<button style="display: none;" id="agreeButton" onclick="agree()"></button>
-		<button style="display: none;" id="neitherButton" onclick="neither()"></button>
-		<button style="display: none;" id="disagreeButton" onclick="disagree()"></button>
+		<button style="display: none;" id="agreeButton" onclick="agree()">Eens</button>
+		<button style="display: none;" id="neitherButton" onclick="neither()">Geen van beide</button>
+		<button style="display: none;" id="disagreeButton" onclick="disagree()">Oneens</button>
 		<button id="startButton" onclick="start()">Start</button>
 		<span style="display: none;"><p>Wat vinden de partijen?</p></span>
 	</div>
