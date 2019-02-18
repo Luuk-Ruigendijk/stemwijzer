@@ -1,6 +1,8 @@
 function agree(){
+	eensVraag[currentQuestion] = 1;
 	currentQuestion++;
 	showQuestion();
+	
 }
 
 function neither(){
@@ -9,6 +11,7 @@ function neither(){
 }
 
 function disagree(){
+	oneensVraag[currentQuestion] = 1;
 	currentQuestion++;
 	showQuestion();
 }
@@ -20,6 +23,8 @@ function showQuestion(){
 
 function previousQuestion(){
 	currentQuestion--;
+	oneensVraag[currentQuestion] = 0;
+	eensVraag[currentQuestion] = 0;
 	if (currentQuestion >= 0) {
 		showQuestion();
 	}

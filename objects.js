@@ -235,4 +235,22 @@ var parties = [
 	{name: "Libertarische Partij", secular: true, size: 0}
 ];
 
+function eensVraagVariableMaker(){
+	var eensVraag = [];
+	for (var i = subjects.length; i >= 0; i++) {
+		eensVraag[i] = 0;
+	}
+	return eensVraag;
+}
 
+eensVraagVariableMaker()
+
+function oneensVraagVariableMaker(){
+	var oneensVraag = [];
+	for (var i = subjects.length; i >= 0; i++) {
+		oneensVraag[i] = 0;
+	}
+	return oneensVraag;
+}
+
+oneensVraagVariableMaker()
