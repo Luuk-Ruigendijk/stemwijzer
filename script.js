@@ -1,5 +1,5 @@
 function agree(){
-	chosenAnswer[currentQuestion] = pro;
+	chosenAnswer[currentQuestion] = "pro";
 
 	currentQuestion++;
 	showQuestion();
@@ -11,7 +11,7 @@ function neither(){
 }
 
 function disagree(){
-	chosenAnswer[currentQuestion] = contra;
+	chosenAnswer[currentQuestion] = "contra";
 
 	currentQuestion++;
 	showQuestion();
