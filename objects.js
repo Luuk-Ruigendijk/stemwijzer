@@ -235,13 +235,13 @@ var parties = [
 	{name: "Libertarische Partij", secular: true, size: 0}
 ];
 
+var totalAmountOfQuestions = subjects.length -1;
+
 var chosenAnswer = [];
 
-function vraagAntwoordVariableMaker(){
-	for (var i = 0; i >= subjects.length; i++) {
-		chosenAnswer[i] = 0;
+for (var i = 0; i < subjects.length; i++) {
+	
+	for (var u = 0; u < subjects[i].parties.length; u++) {
+		//if (subjects[i].parties[u].position) {}
 	}
-	return chosenAnswer;
 }
-
-vraagAntwoordVariableMaker()
