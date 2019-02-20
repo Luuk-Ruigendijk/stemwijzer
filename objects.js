@@ -239,9 +239,9 @@ var totalAmountOfQuestions = subjects.length -1;
 
 var chosenAnswer = [];
 
-for (var i = 0; i < subjects.length; i++) {
+for (var i = 0; i < totalAmountOfQuestions; i++) {
 	
-	for (var u = 0; u < subjects[i].parties.length; u++) {
+	for (var u = 0; u < subjects[i].parties.length -1; u++) {
 		//if (subjects[i].parties[u].position) {}
 	}
 }
