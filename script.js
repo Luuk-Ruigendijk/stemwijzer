@@ -57,3 +57,20 @@ function start(){
 	document.getElementById("startButton").style.display="none";
 	showQuestion()
 }
+
+function openPartyList(){
+
+}
+
+//unfinished code to show all the parties opinions
+
+/*<span onclick="openPartyList()">Wat vinden de partijen?</span>
+		<div id="partyList">
+			<script type="text/javascript">
+				for (var i = 0; i < subjects[currentQuestion].parties.length; i++) {
+					var parties = document.getElementById("parties"+[i]);
+					parties[i].innerHTML = subjects[currentQuestion].parties[i].explanation;
+				}
+			</script>
+		</div>
+*/
