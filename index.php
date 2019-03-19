@@ -14,7 +14,7 @@
 		<button style="display: none;" id="neitherButton" onclick="neither()">Geen van beide</button>
 		<button style="display: none;" id="disagreeButton" onclick="disagree()">Oneens</button>
 		<button id="startButton" onclick="start()">Start</button>
-		<span style="display: none;"><p>Wat vinden de partijen?</p></span>
+		<span style="display: none;" id="partijenMeening"><p>Wat vinden de partijen?</p></span>
 		
 	</div>
 <script type="text/javascript" src="objects.js"></script>

@@ -19,11 +19,15 @@ function newCurrentQuestion(){
 	if (currentQuestion < totalAmountOfQuestions) {
 		currentQuestion++;
 	}
+	else if (currentQuestion = totalAmountOfQuestions) {
+		showResults;
+	}
 }
 
 function showQuestion(){
 	document.getElementById("h1").innerHTML = subjects[currentQuestion].title;
 	document.getElementById("p1").innerHTML = subjects[currentQuestion].statement;
+
 }
 
 function previousQuestion(){
@@ -32,17 +36,18 @@ function previousQuestion(){
 	if (currentQuestion <= totalAmountOfQuestions) {
 		
 		if (currentQuestion < 0) {
-		document.getElementById("agreeButton").style.display="none";
-		document.getElementById("neitherButton").style.display="none";
-		document.getElementById("disagreeButton").style.display="none";
-		document.getElementById("backArrow").style.display="none";
-		document.getElementById("startButton").style.display="inherit";
-		document.getElementById("h1").innerHTML="Test uw politieke voorkeur aan de hand van 30 stellingen";
-		document.getElementById("p1").innerHTML="";
-	}
-	else {
-		showQuestion();
-	}
+			document.getElementById("agreeButton").style.display="none";
+			document.getElementById("neitherButton").style.display="none";
+			document.getElementById("disagreeButton").style.display="none";
+			document.getElementById("backArrow").style.display="none";
+			document.getElementById("partijenMeening").style.display="none";
+			document.getElementById("startButton").style.display="inherit";
+			document.getElementById("h1").innerHTML="Test uw politieke voorkeur aan de hand van 30 stellingen";
+			document.getElementById("p1").innerHTML="";
+		}
+		else {
+			showQuestion();
+		}
 	}
 
 	
@@ -53,6 +58,7 @@ function start(){
 	document.getElementById("agreeButton").style.display="inline";
 	document.getElementById("neitherButton").style.display="inline";
 	document.getElementById("disagreeButton").style.display="inline";
+	document.getElementById("partijenMeening").style.display="inline";
 	document.getElementById("backArrow").style.display="inherit";
 	document.getElementById("startButton").style.display="none";
 	showQuestion()
@@ -60,6 +66,10 @@ function start(){
 
 function openPartyList(){
 
+}
+
+function showResults(){
+	
 }
 
 //unfinished code to show all the parties opinions
