@@ -211,7 +211,7 @@ var subjects =
 }
 ];
 
-var parties = [
+/*var parties = [
 	{name: "VVD", secular: true, size: 33, long: "Volkspartij voor Vrijheid en Democratie", howMuchAgreed: 0},
 	{name: "CDA", secular: false, size: 19, long: "Christen Democratisch Appel", howMuchAgreed: 0},
 	{name: "PVV", secular: true, size: 20, long: "Partij voor de Vrijheid", howMuchAgreed: 0},
@@ -225,7 +225,7 @@ var parties = [
 	{name: "DENK", secular: true, size: 3, howMuchAgreed: 0},
 	{name: "Forum voor Democratie", secular: true, size: 2, howMuchAgreed: 0},
 	{name: "Lokaal in de kamer", secular: true, size: 0, howMuchAgreed: 0},
-	{name: "OndernemersPartij", secular: true, size: 0},
+	{name: "OndernemersPartij", secular: true, size: 0, howMuchAgreed: 0},
 	{name: "VNL", secular: true, size: 0, howMuchAgreed: 0},
 	{name: "Nieuwe Wegen", secular: true, size: 0, howMuchAgreed: 0},
 	{name: "De Burger Beweging", secular: true, size: 0, howMuchAgreed: 0},
@@ -234,7 +234,7 @@ var parties = [
 	{name: "Libertarische Partij", secular: true, size: 0, howMuchAgreed: 0},
 	{name: "Vrijzinnige Partij", secular: true, size: 0, howMuchAgreed: 0},
 ];
-
+*/
 var totalAmountOfQuestions = subjects.length -1;
 
 var chosenAnswer = [];

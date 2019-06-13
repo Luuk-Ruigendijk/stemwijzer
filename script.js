@@ -20,21 +20,20 @@ function newCurrentQuestion(){
 		currentQuestion++;
 	}
 	else if (currentQuestion = totalAmountOfQuestions) {
-		showResults;
+		currentQuestion++;
+		showResults()
 	}
 }
 
 function showQuestion(){
 	document.getElementById("h1").innerHTML = subjects[currentQuestion].title;
 	document.getElementById("p1").innerHTML = subjects[currentQuestion].statement;
-
 }
 
 function previousQuestion(){
 	currentQuestion--;
 	chosenAnswer[currentQuestion] = 0;
 	if (currentQuestion <= totalAmountOfQuestions) {
-		
 		if (currentQuestion < 0) {
 			document.getElementById("agreeButton").style.display="none";
 			document.getElementById("neitherButton").style.display="none";
@@ -46,11 +45,13 @@ function previousQuestion(){
 			document.getElementById("p1").innerHTML="";
 		}
 		else {
+			document.getElementById("agreeButton").style.display="inline";
+			document.getElementById("neitherButton").style.display="inline";
+			document.getElementById("disagreeButton").style.display="inline";
+			document.getElementById("partijenMeening").style.display="inline";
 			showQuestion();
 		}
 	}
-
-	
 }
 
 function start(){
@@ -69,7 +70,10 @@ function openPartyList(){
 }
 
 function showResults(){
-	
+	document.getElementById("agreeButton").style.display="none";
+	document.getElementById("neitherButton").style.display="none";
+	document.getElementById("disagreeButton").style.display="none";
+	document.getElementById("partijenMeening").style.display="none";
 }
 
 //unfinished code to show all the parties opinions
@@ -84,3 +88,20 @@ function showResults(){
 			</script>
 		</div>
 */
+
+var parties;
+
+function collectData(){
+		function reqListener () {
+			parties = JSON.parse(this.response);
+			console.dir(parties);
+	  //console.log(this.responseText);
+	}
+
+	var oReq = new XMLHttpRequest();
+	oReq.addEventListener("load", reqListener);
+	oReq.open("GET", "http://localhost/stemwijzer/yo.php");
+	oReq.send();
+}
+
+collectData();
