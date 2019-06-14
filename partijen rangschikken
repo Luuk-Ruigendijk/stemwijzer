@@ -1,0 +1,26 @@
+doel: 
+
+toon de partijen in een schema op volgorde van hoogste mee eens.
+
+
+idee: 
+
+1. kies met math.max degene met de hoogste mee eens, zet die in de html, verwijder uit de array, repeat.
+
+
+probleem: 
+
+1. 	weet niet hoe ik meerdere data in een element kan zetten zonder te verwijderen wat er staat.
+
+door gegevens uit het array te verwijderen is het niet meer mogelijk om andere keuzes te maken zonder te herladen *1.
+
+
+
+uitvoering:
+
+
+
+
+mogelijke oplossingen:
+
+*1 misschien kan ik de php request nogmaals uitvoeren om de array opnieuw te vullen.

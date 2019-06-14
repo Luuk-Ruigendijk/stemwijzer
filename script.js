@@ -1,27 +1,43 @@
+var parties;
+
+function collectData(){
+		function reqListener () {
+			parties = JSON.parse(this.response);
+			console.dir(parties);
+	  //console.log(this.responseText);
+	}
+
+	var oReq = new XMLHttpRequest();
+	oReq.addEventListener("load", reqListener);
+	oReq.open("GET", "http://localhost/stemwijzer/yo.php");
+	oReq.send();
+}
+
+collectData();
+
 function agree(){
 	chosenAnswer[currentQuestion] = "pro";
 	newCurrentQuestion();
-	showQuestion();
 }
 
 function neither(){
+	chosenAnswer[currentQuestion] = "neither";
 	newCurrentQuestion();
-	showQuestion();
 }
 
 function disagree(){
 	chosenAnswer[currentQuestion] = "contra";
 	newCurrentQuestion();
-	showQuestion();
 }
 
 function newCurrentQuestion(){
 	if (currentQuestion < totalAmountOfQuestions) {
 		currentQuestion++;
+		showQuestion();
 	}
 	else if (currentQuestion = totalAmountOfQuestions) {
 		currentQuestion++;
-		showResults()
+		showResults();
 	}
 }
 
@@ -69,11 +85,33 @@ function openPartyList(){
 
 }
 
+function addPartyVotes(){
+	for (var subject = 0; subject < subjects.length; subject++) {
+		for (var subjectParty = 0; subjectParty < subjects[subject].parties.length; subjectParty++) {
+			if (subjects[subject].parties[subjectParty].position === chosenAnswer[subject]) {parties[subject].howMuchAgreed++}
+		}
+	}
+	parties.sort(function (a, b) {
+		return a.howMuchAgreed - b.howMuchAgreed;
+	});
+	parties.reverse();
+}
+
+var partiesOrdered;
+
 function showResults(){
+	addPartyVotes();
+	
 	document.getElementById("agreeButton").style.display="none";
 	document.getElementById("neitherButton").style.display="none";
 	document.getElementById("disagreeButton").style.display="none";
 	document.getElementById("partijenMeening").style.display="none";
+	document.getElementById("h1").innerHTML = "Hier zijn de resultaten van uw keuzes:";
+	/*for (var partie = 0; partie < parties.length; partie++) {
+		var pushedPartyName = parties[partie].name;
+		partiesOrdered.push(pushedPartyName);
+	};
+	document.getElementById("p1").innerHTML = partiesOrdered;*/
 }
 
 //unfinished code to show all the parties opinions
@@ -89,19 +127,3 @@ function showResults(){
 		</div>
 */
 
-var parties;
-
-function collectData(){
-		function reqListener () {
-			parties = JSON.parse(this.response);
-			console.dir(parties);
-	  //console.log(this.responseText);
-	}
-
-	var oReq = new XMLHttpRequest();
-	oReq.addEventListener("load", reqListener);
-	oReq.open("GET", "http://localhost/stemwijzer/yo.php");
-	oReq.send();
-}
-
-collectData();
