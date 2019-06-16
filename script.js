@@ -44,6 +44,11 @@ function newCurrentQuestion(){
 function showQuestion(){
 	document.getElementById("h1").innerHTML = subjects[currentQuestion].title;
 	document.getElementById("p1").innerHTML = subjects[currentQuestion].statement;
+	showOpinions();
+}
+
+function showOpinions(){
+
 }
 
 function previousQuestion(){
@@ -99,6 +104,8 @@ function addPartyVotes(){
 
 var partiesOrdered;
 
+var pushedPartyName;
+
 function showResults(){
 	addPartyVotes();
 	
@@ -107,11 +114,11 @@ function showResults(){
 	document.getElementById("disagreeButton").style.display="none";
 	document.getElementById("partijenMeening").style.display="none";
 	document.getElementById("h1").innerHTML = "Hier zijn de resultaten van uw keuzes:";
-	/*for (var partie = 0; partie < parties.length; partie++) {
-		var pushedPartyName = parties[partie].name;
+	for (var partie = 0; partie < parties.length; partie++) {
+		pushedPartyName = parties[partie].name;
 		partiesOrdered.push(pushedPartyName);
 	};
-	document.getElementById("p1").innerHTML = partiesOrdered;*/
+	document.getElementById("p1").innerHTML = partiesOrdered;
 }
 
 //unfinished code to show all the parties opinions

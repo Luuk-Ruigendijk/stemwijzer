@@ -1,0 +1,18 @@
+doel: 
+
+laat de partijen op het einde zien in de juiste volgorde.
+
+
+uitwerking:
+
+maak een for loop aan. zet de partijnamen met behulp van de for loop een voor een in een variable, die het vorvolgens pushed in een ander variable, zodat alleen de namen van de partijen er in staan. zorg er daarna voor dat het variable wordt uitgelezen in de html, waardoor alleen de partijnamen neer worden gezet.
+
+
+problemen: 
+
+er is volgens de browser een probleem met het pushen. wanneer ik het variable die alleen de naam van de partij opgeslagen heeft erbij pak, laat die de volledige informatie van de partij zien.
+
+ik kwam niet uit de uitleg die gegeven was nadat ik de error op zocht.
+https://stackoverflow.com/questions/24841476/cannot-read-property-push-of-undefined-when-combining-arrays
+https://stackoverflow.com/questions/30350445/cannot-read-property-push-of-undefined-javascript/30350475
+https://www.freecodecamp.org/forum/t/cannot-read-property-push-of-undefined/233038
