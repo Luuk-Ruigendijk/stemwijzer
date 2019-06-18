@@ -14,6 +14,9 @@
 			<button style="display: none;" id="neitherButton" onclick="neither()">Geen van beide</button>
 			<button style="display: none;" id="disagreeButton" onclick="disagree()">Oneens</button>
 			<button id="startButton" onclick="start()">Start</button>
+			<table id="partyResults">
+				
+			</table>
 			<span style="display: none;" id="partijenMeening"><p>Wat vinden de partijen?</p></span>
 			
 		</div>

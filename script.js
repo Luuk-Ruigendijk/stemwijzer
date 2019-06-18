@@ -102,7 +102,7 @@ function addPartyVotes(){
 	parties.reverse();
 }
 
-var partiesOrdered;
+var partiesOrdered = [];
 
 var pushedPartyName;
 
@@ -115,10 +115,16 @@ function showResults(){
 	document.getElementById("partijenMeening").style.display="none";
 	document.getElementById("h1").innerHTML = "Hier zijn de resultaten van uw keuzes:";
 	for (var partie = 0; partie < parties.length; partie++) {
-		pushedPartyName = parties[partie].name;
-		partiesOrdered.push(pushedPartyName);
+		var createTableSlide = document.createElement("tr");
+		var createTableData = document.createElement("td");
+		var createTableNumbers = document.createElement("td");
+		createTableData.innerHTML = parties[partie].name;
+		createTableNumbers.innerHTML = parties[partie].howMuchAgreed;
+		document.getElementById("partyResults").appendChild(createTableSlide);
+		createTableSlide.appendChild(createTableData);
+		createTableSlide.appendChild(createTableNumbers);
+		//partiesOrdered.push(parties[partie].name);
 	};
-	document.getElementById("p1").innerHTML = partiesOrdered;
 }
 
 //unfinished code to show all the parties opinions
