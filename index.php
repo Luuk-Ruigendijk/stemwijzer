@@ -14,10 +14,18 @@
 			<button style="display: none;" id="neitherButton" onclick="neither()">Geen van beide</button>
 			<button style="display: none;" id="disagreeButton" onclick="disagree()">Oneens</button>
 			<button id="startButton" onclick="start()">Start</button>
-			<table id="partyResults">
-				
+			<table id="partyResults" style="display: none;">
+				<tr>
+				    <th>Naam van de partij</th>
+				    <th>hoeveelheid zelfde keuzes</th> 
+				</tr>
 			</table>
-			<span style="display: none;" id="partijenMeening"><p>Wat vinden de partijen?</p></span>
+			<div style="display: none;" id="partijenMeeningVraag">
+				<p>Wat vinden de partijen?</p>
+				<table id="partijenMeening"></table>
+
+			</div>
+
 			
 		</div>
 		<script type="text/javascript" src="objects.js"></script>

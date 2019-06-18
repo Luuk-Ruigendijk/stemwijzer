@@ -1,5 +1,7 @@
 var parties;
 
+var subjectAndParty = 0;
+
 function collectData(){
 		function reqListener () {
 			parties = JSON.parse(this.response);
@@ -49,6 +51,22 @@ function showQuestion(){
 
 function showOpinions(){
 
+	subjectAndParty = subjects[currentQuestion].parties;
+
+	for (var partie = 0; partie < subjectAndParty.length; partie++) {
+		var createTableSlide = document.createElement("tr");
+		var createTablePartyName = document.createElement("td");
+		var createTablePosition = document.createElement("td");
+		var createTableExplanation = document.createElement("td");
+		createTablePartyName.innerHTML = subjects[currentQuestion].parties[partie].name;
+		createTablePosition.innerHTML = subjects[currentQuestion].parties[partie].position;
+		createTableExplanation.innerHTML = subjects[currentQuestion].parties[partie].explanation;
+		document.getElementById("partijenMeening").appendChild(createTableSlide);
+		createTableSlide.appendChild(createTablePartyName);
+		createTableSlide.appendChild(createTablePosition);
+		createTableSlide.appendChild(createTableExplanation);
+		//partiesOrdered.push(parties[partie].name);
+	};
 }
 
 function previousQuestion(){
@@ -60,7 +78,7 @@ function previousQuestion(){
 			document.getElementById("neitherButton").style.display="none";
 			document.getElementById("disagreeButton").style.display="none";
 			document.getElementById("backArrow").style.display="none";
-			document.getElementById("partijenMeening").style.display="none";
+			document.getElementById("partijenMeeningVraag").style.display="none";
 			document.getElementById("startButton").style.display="inherit";
 			document.getElementById("h1").innerHTML="Test uw politieke voorkeur aan de hand van 30 stellingen";
 			document.getElementById("p1").innerHTML="";
@@ -69,7 +87,7 @@ function previousQuestion(){
 			document.getElementById("agreeButton").style.display="inline";
 			document.getElementById("neitherButton").style.display="inline";
 			document.getElementById("disagreeButton").style.display="inline";
-			document.getElementById("partijenMeening").style.display="inline";
+			document.getElementById("partijenMeeningVraag").style.display="inline";
 			showQuestion();
 		}
 	}
@@ -80,7 +98,7 @@ function start(){
 	document.getElementById("agreeButton").style.display="inline";
 	document.getElementById("neitherButton").style.display="inline";
 	document.getElementById("disagreeButton").style.display="inline";
-	document.getElementById("partijenMeening").style.display="inline";
+	document.getElementById("partijenMeeningVraag").style.display="inline";
 	document.getElementById("backArrow").style.display="inherit";
 	document.getElementById("startButton").style.display="none";
 	showQuestion()
@@ -112,7 +130,8 @@ function showResults(){
 	document.getElementById("agreeButton").style.display="none";
 	document.getElementById("neitherButton").style.display="none";
 	document.getElementById("disagreeButton").style.display="none";
-	document.getElementById("partijenMeening").style.display="none";
+	document.getElementById("partijenMeeningVraag").style.display="none";
+	document.getElementById("partyResults").style.display="block";
 	document.getElementById("h1").innerHTML = "Hier zijn de resultaten van uw keuzes:";
 	for (var partie = 0; partie < parties.length; partie++) {
 		var createTableSlide = document.createElement("tr");
