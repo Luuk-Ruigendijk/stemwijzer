@@ -53,6 +53,8 @@ function showOpinions(){
 
 	subjectAndParty = subjects[currentQuestion].parties;
 
+	document.getElementById("partijenMeening").innerHTML = "";
+
 	for (var partie = 0; partie < subjectAndParty.length; partie++) {
 		var createTableSlide = document.createElement("tr");
 		var createTablePartyName = document.createElement("td");
