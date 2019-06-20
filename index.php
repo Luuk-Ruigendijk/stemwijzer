@@ -15,10 +15,6 @@
 			<button style="display: none;" id="disagreeButton" onclick="disagree()">Oneens</button>
 			<button id="startButton" onclick="start()">Start</button>
 			<table id="partyResults" style="display: none;">
-				<tr>
-				    <th>Naam van de partij</th>
-				    <th>hoeveelheid zelfde keuzes</th> 
-				</tr>
 			</table>
 			<div style="display: none;" id="partijenMeeningVraag">
 				<p>Wat vinden de partijen?</p>

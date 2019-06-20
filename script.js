@@ -84,12 +84,17 @@ function previousQuestion(){
 			document.getElementById("startButton").style.display="inherit";
 			document.getElementById("h1").innerHTML="Test uw politieke voorkeur aan de hand van 30 stellingen";
 			document.getElementById("p1").innerHTML="";
+
 		}
 		else {
 			document.getElementById("agreeButton").style.display="inline";
 			document.getElementById("neitherButton").style.display="inline";
 			document.getElementById("disagreeButton").style.display="inline";
 			document.getElementById("partijenMeeningVraag").style.display="inline";
+			document.getElementById("partyResults").innerHTML = "";
+			for (var partie = 0; partie < parties.length; partie++) {
+				parties[partie].howMuchAgreed = 0;
+			}
 			showQuestion();
 		}
 	}
