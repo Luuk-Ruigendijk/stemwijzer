@@ -92,9 +92,6 @@ function previousQuestion(){
 			document.getElementById("disagreeButton").style.display="inline";
 			document.getElementById("partijenMeeningVraag").style.display="inline";
 			document.getElementById("partyResults").innerHTML = "";
-			for (var partie = 0; partie < parties.length; partie++) {
-				parties[partie].howMuchAgreed = 0;
-			}
 			showQuestion();
 		}
 	}
@@ -116,15 +113,32 @@ function openPartyList(){
 }
 
 function addPartyVotes(){
+	for (let partie = 0; partie < parties.length; partie++) {
+				parties[partie].howMuchAgreed = 0;
+	}
 	for (var subject = 0; subject < subjects.length; subject++) {
 		for (var subjectParty = 0; subjectParty < subjects[subject].parties.length; subjectParty++) {
-			if (subjects[subject].parties[subjectParty].position === chosenAnswer[subject]) {parties[subject].howMuchAgreed++}
+			if (subjects[subject].parties[subjectParty].position === chosenAnswer[subject]) {
+				/*let matchedParty = parties.find(function(element){
+					console.log('match nu het volgende:');
+					console.log (element.name + ' is dat gelijk aan: '+subjects[subject].parties[subjectParty].name);
+					return element.name === subjects[subject].parties[subjectParty].name;
+				})
+
+				if (matchedParty){
+					matchedParty.howMuchAgreed++;
+				}*/
+				for (var i = 0; i < parties.length; i++) {
+					if (parties[i].name === subjects[subject].parties[subjectParty].name) {parties[i].howMuchAgreed++}
+				}
+
+			}
 		}
 	}
-	parties.sort(function (a, b) {
-		return a.howMuchAgreed - b.howMuchAgreed;
-	});
-	parties.reverse();
+	console.log(parties)
+	/*parties.sort(function (a, b) {
+		return b.howMuchAgreed - a.howMuchAgreed;
+	});*/
 }
 
 var partiesOrdered = [];
