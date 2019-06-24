@@ -136,9 +136,9 @@ function addPartyVotes(){
 		}
 	}
 	console.log(parties)
-	/*parties.sort(function (a, b) {
+	parties.sort(function (a, b) {
 		return b.howMuchAgreed - a.howMuchAgreed;
-	});*/
+	});
 }
 
 var partiesOrdered = [];
