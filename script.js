@@ -92,6 +92,8 @@ function previousQuestion(){
 			document.getElementById("disagreeButton").style.display="inline";
 			document.getElementById("partijenMeeningVraag").style.display="inline";
 			document.getElementById("partyResults").innerHTML = "";
+			document.getElementById("topThree").style.display="none";
+			document.getElementById("topThree").innerHTML = "";
 			showQuestion();
 		}
 	}
@@ -153,11 +155,22 @@ function showResults(){
 	document.getElementById("disagreeButton").style.display="none";
 	document.getElementById("partijenMeeningVraag").style.display="none";
 	document.getElementById("partyResults").style.display="block";
+	document.getElementById("topThree").style.display="inline-block";
 	document.getElementById("h1").innerHTML = "Hier zijn de resultaten van uw keuzes:";
+	for (var topThree = 0; topThree < 3; topThree++) {
+		let createTableSlide = document.createElement("div");
+		let createTableData = document.createElement("p");
+		let createTableNumbers = document.createElement("p");
+		createTableData.innerHTML = parties[topThree].name;
+		createTableNumbers.innerHTML = "%" + Math.round(parties[topThree].howMuchAgreed/totalAmountOfQuestions*100);
+		document.getElementById("topThree").appendChild(createTableSlide);
+		createTableSlide.appendChild(createTableData);
+		createTableSlide.appendChild(createTableNumbers);
+	}
 	for (var partie = 0; partie < parties.length; partie++) {
-		var createTableSlide = document.createElement("tr");
-		var createTableData = document.createElement("td");
-		var createTableNumbers = document.createElement("td");
+		let createTableSlide = document.createElement("tr");
+		let createTableData = document.createElement("td");
+		let createTableNumbers = document.createElement("td");
 		createTableData.innerHTML = parties[partie].name;
 		createTableNumbers.innerHTML = parties[partie].howMuchAgreed;
 		document.getElementById("partyResults").appendChild(createTableSlide);
