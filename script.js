@@ -162,7 +162,7 @@ function showResults(){
 		let createTableData = document.createElement("p");
 		let createTableNumbers = document.createElement("p");
 		createTableData.innerHTML = parties[topThree].name;
-		createTableNumbers.innerHTML = "%" + Math.round(parties[topThree].howMuchAgreed/totalAmountOfQuestions*100);
+		createTableNumbers.innerHTML = Math.round(parties[topThree].howMuchAgreed/(totalAmountOfQuestions+1)*100) + "%";
 		document.getElementById("topThree").appendChild(createTableSlide);
 		createTableSlide.appendChild(createTableData);
 		createTableSlide.appendChild(createTableNumbers);
